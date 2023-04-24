@@ -188,3 +188,12 @@
     right: 0;
     margin: auto;
 }
+
+#kt-loaderoverlay {
+    position: absolute;
+    top:0px;
+    width: 100vw;
+    height: 6000px;
+    background-color: white;
+    z-index: 1000000;
+}
