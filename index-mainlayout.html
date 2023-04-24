@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- <base href="/" /> -->
+    <title>Aurigin Educational Consultation</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Aurigin Educational Consultation is placement agency with over 5 years experience in assisting students with international admissions">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+    <!--
+    Essential stylesheets
+    =====================================-->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link href="css/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+
+<body id="top">
+    <!-- Content Here -->
+
+
+    <script src="js/aos.js"></script>
+    <script>
+        (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+            ({ key: "AIzaSyC_FrHvE2menESkvUK1d7MqEgggubgBNi0", v: "beta" });
+
+        let map;
+
+        // initMap is now async
+        async function initMap() {
+
+            // The map, centered at Uluru
+            let mapElement = document.getElementById("map");
+            if (mapElement) {
+
+                console.log("Kt initializing map now");
+                // The location of Uluru
+                const position = { lat: -17.8313996, lng: 31.0407665 };
+                // Request needed libraries.
+                //@ts-ignore
+                const { Map } = await google.maps.importLibrary("maps");
+                const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+
+                map = new Map(mapElement, {
+                    zoom: 15,
+                    center: position,
+                    mapId: "DEMO_MAP_ID",
+                });
+
+                // The marker, positioned at Uluru
+                const marker = new AdvancedMarkerView({
+                    map: map,
+                    position: position,
+                    title: "Aurigin Educational Consultation (Study Abroad)",
+                });
+            }
+            else {
+                console.log("No map found");
+            }
+        }
+
+
+        initMap();
+
+    </script>
+    <!--
+    Essential Scripts
+    =====================================-->
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
+    <script src="plugins/google-map/gmap.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function initializeCourasel(nameOfCourasel) {
+            console.log(nameOfCourasel + " Courasel started");
+            try {
+                $('#' + nameOfCourasel).carousel();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function initializeTypedStrings() {
+            console.log("Typed started");
+            try {
+                var options = {
+                    strings: ['trusted educational guide', 'gateway to success', 'sucess our success'],
+                    typeSpeed: 80,
+                    backSpeed: 40,
+                    backDelay: 2000,
+                    loop: true,
+                    showCursor: false
+                };
+                var typed = new Typed('#typed', options);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        $(() => {
+            initializeIndex();
+            // initializeTypedStrings();
+            // initializeCourasel("carouselHero");
+            // initializeCourasel("carouselHeroS");
+        })
+    </script>
+
+</body>
+
+</html>
