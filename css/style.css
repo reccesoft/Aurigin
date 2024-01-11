@@ -1426,3 +1426,9 @@ a:focus {
   opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
+
+.kt-form-section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #EEEEEE;
+}
